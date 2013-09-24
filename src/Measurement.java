@@ -37,6 +37,9 @@ public class Measurement {
         if(thisConverted.unitType != measurementConverted.unitType)
             throw new MeasurementTypeException("Types do not match");
 
-        return new Measurement(thisConverted.value + measurementConverted.value,thisConverted.unitType);
+        if(this.unitType == UnitType.CELSIUS)
+            return new Measurement((thisConverted.value + measurementConverted.value)/2,thisConverted.unitType);
+        else
+            return new Measurement(thisConverted.value + measurementConverted.value,thisConverted.unitType);
     }
 }

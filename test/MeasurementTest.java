@@ -83,5 +83,20 @@ public class MeasurementTest {
         oneFoot.add(new Measurement(1,UnitType.CUP));
     }
 
+    @Test
+    public void sumOfTwoEqualTemperaturesShouldBeTheSameTemperature() throws MeasurementTypeException {
+        Measurement fiftyCelsius=new Measurement(50,UnitType.CELSIUS);
+        Measurement anotherFiftyCelsius=new Measurement(50,UnitType.CELSIUS);
+
+        assertThat(fiftyCelsius.add(anotherFiftyCelsius),is(new Measurement(50,UnitType.CELSIUS)));
+    }
+
+@Test
+    public void sumOfTwoDifferentTemperaturesShouldBeTheAverageOfTheTemperature() throws MeasurementTypeException {
+        Measurement fiftyCelsius=new Measurement(50,UnitType.CELSIUS);
+        Measurement oneHundredCelsius=new Measurement(100,UnitType.CELSIUS);
+
+        assertThat(fiftyCelsius.add(oneHundredCelsius),is(new Measurement(75,UnitType.CELSIUS)));
+    }
 
 }

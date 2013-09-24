@@ -1,6 +1,7 @@
 public enum UnitType {
     INCH(1),FOOT(12,INCH) , YARD(3 * 12,INCH), MILE(3 * 12 *1760,INCH),
-    TEASPOON(1), TABLESPOON(3,TEASPOON),OUNCE(2*3,TEASPOON),CUP(8*2*3,TEASPOON);
+    TEASPOON(1), TABLESPOON(3,TEASPOON),OUNCE(2*3,TEASPOON),CUP(8*2*3,TEASPOON),
+    CELSIUS(1);
     private int conversionFactor;
     private UnitType conversionBase;
 
